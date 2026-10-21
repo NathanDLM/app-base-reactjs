@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: recup le code
         uses: actions/checkout@v4
+      - name: setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          
       - name: Installation des dépendences npm
         run: npm install
       - name: Build du projet react
