@@ -2,29 +2,16 @@ name: TP Github Actions
 on: [push]
 
 jobs:
-  install: 
+  install-build-test: 
     runs-on: ubuntu-latest
     steps:
-      name: Installation des dépendences npm
-      run: npm install
+      - name: Installation des dépendences npm
+        run: npm install
+      - name: Build du projet react
+        run: npm run build
+      - name: demarrage du projet
+        run: npm start
+      - name: verification du demarrage du projet
+        run: curl -I https://localhost:3000/
   
-  build:
-    runs-on: ubuntu-latest
-    needs: install
-    steps: 
-      name: Build du projet react
-      run: npm run build
-  
-  start: 
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      name: demarrage du projet
-      run: npm start
 
-  verification:
-    runs-on: ubuntu-latest
-    needs: start
-    steps:
-      name: verification du demarrage du projet
-      run: curl -I https://localhost:3000/
