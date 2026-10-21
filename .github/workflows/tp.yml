@@ -14,6 +14,6 @@ jobs:
       - name: Build du projet react
         run: npm run build
       - name: demarrage du projet et verification du demarrage
-        run: npm start & curl -I https://localhost:3000/
+        run: npm start & curl -I http://localhost:3000/
   
 
