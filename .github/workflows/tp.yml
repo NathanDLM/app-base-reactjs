@@ -7,6 +7,8 @@ jobs:
   install-build-test: 
     runs-on: ubuntu-latest
     steps:
+      - name: recup le code
+        uses: actions/checkout@v4
       - name: Installation des dépendences npm
         run: npm install
       - name: Build du projet react
