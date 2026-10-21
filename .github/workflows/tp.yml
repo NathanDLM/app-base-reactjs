@@ -13,7 +13,11 @@ jobs:
         run: npm install
       - name: Build du projet react
         run: npm run build
-      - name: demarrage du projet et verification du demarrage
-        run: npm start & curl -I http://localhost:3000/
+      - name: demarrage du projet 
+        run: npm start & 
+      - name: attente du lancement du serveur
+        run: npx --yes wait-on http://localhost:3000/
+      - name: verification du lancement
+        run: curl -I http://localhost:3000/
   
 
