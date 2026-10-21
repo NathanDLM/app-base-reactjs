@@ -23,6 +23,6 @@ jobs:
       - name: attente du lancement du serveur
         run: npx --yes wait-on http://localhost:3000
       - name: verification du lancement
-        run: curl -I http://localhost:3000
+        run: curl -I http://localhost:3000 | grep "HTTP/1.1 200 OK"
   
 
