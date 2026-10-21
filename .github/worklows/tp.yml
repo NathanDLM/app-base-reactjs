@@ -1,5 +1,7 @@
 name: TP Github Actions
-on: [push]
+on:
+  push:
+    branch: main
 
 jobs:
   install-build-test: 
